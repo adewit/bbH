@@ -1,9 +1,9 @@
 #INSTRUCTIONS TO RUN WITH MG5_aMC_v2.6.1
 #They need to be entered line-by-line (i.e. not executed as a script)
 
-cmsrel CMSSW_7_1_30; cd CMSSW_7_1_30/src; cmsenv; scram b -j 8
+cmsrel CMSSW_10_6_8; cd CMSSW_10_6_8/src; cmsenv; scram b -j 8
 
-git clone git@github.com:mflechl/bbH.git -b MG5_v2.6
+git clone git@github.com:panwarlsweet/bbH.git -b MG5_v2.6_UL19
 cd bbH
 
 #wget https://launchpad.net/mg5amcnlo/2.0/2.6.x/+download/MG5_aMC_v2.6.1.tar.gz
@@ -22,7 +22,7 @@ cat bbH_test/Source/PDF/pdfwrap_lhapdf.f | sed s#'      CALL SETPDFPATH(LHAPATH)
 cd ..
 tar -zxf bbH_4FS_yb2_modified.tar.gz
 
-# Edit any of the cards, e.g. bbH_4FS_yb2/Cards/run_card.dat for sqrt(s)
+# Edit any of the cards, e.g. bbH_4FS_yb2/Cards/run_card.dat for sqrt(s) and PDF == 325500 (Recommended for UL)
 
 # Setup directories and submit jobs
 #   -m : comma separated list of mass points to produce
@@ -47,6 +47,6 @@ python launch_mg_jobs.py -m 80,90,100,110,120,125,130,140,160,180,200,250,350,40
 
 
 #to test: new area
-cmsrel CMSSW_7_1_30; cd CMSSW_7_1_30/src; cmsenv
+cmsrel CMSSW_10_6_8; cd CMSSW_10_6_8/src; cmsenv
 tar -axf <name>.tar.xz
 ./runcmsgrid.sh 100 733 4  #<NEvents> <RandomSeed> <NumberOfCPUs>
