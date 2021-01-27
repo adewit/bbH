@@ -23,7 +23,7 @@ if [ "$use_gridpack_env" = true ]
       then
         scram_arch_version=${5}
       else
-        scram_arch_version=slc6_amd64_gcc481
+        scram_arch_version=slc7_amd64_gcc700
     fi
     echo "%MSG-MG5 SCRAM_ARCH version = $scram_arch_version"
 
@@ -31,7 +31,7 @@ if [ "$use_gridpack_env" = true ]
       then
         cmssw_version=${6}
       else
-        cmssw_version=CMSSW_7_1_30
+        cmssw_version=CMSSW_10_6_8 
     fi
     echo "%MSG-MG5 CMSSW version = $cmssw_version"
     export VO_CMS_SW_DIR=/cvmfs/cms.cern.ch
