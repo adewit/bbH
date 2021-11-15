@@ -1,6 +1,7 @@
 #INSTRUCTIONS TO RUN WITH MG5_aMC_v2.6.1
 #They need to be entered line-by-line (i.e. not executed as a script)
 
+export SCRAM_ARCH=slc7_amd64_gcc700
 cmsrel CMSSW_10_6_8; cd CMSSW_10_6_8/src; cmsenv; scram b -j 8
 
 git clone git@github.com:panwarlsweet/bbH.git -b MG5_v2.6_UL19
